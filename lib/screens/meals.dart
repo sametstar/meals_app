@@ -25,7 +25,7 @@ class MealsScreen extends StatelessWidget {
                   .headlineLarge!
                   .copyWith(color: Theme.of(context).colorScheme.onBackground),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Text(
