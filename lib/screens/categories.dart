@@ -14,13 +14,14 @@ class CategoriesScreen extends StatelessWidget {
         )
         .toList();
     Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (ctx) => MealsScreen(
-            title: category.title,
-            meals: mealByCategory,
-          ),
-        ));
+      context,
+      MaterialPageRoute(
+        builder: (ctx) => MealsScreen(
+          title: category.title,
+          meals: mealByCategory,
+        ),
+      ),
+    );
     // Navigator.of(context).push(route);
   }
 
