@@ -15,7 +15,7 @@ class MealsScreen extends StatelessWidget {
         builder: (ctx) => MealDetailsScreen(meal: meal),
       ),
     );
-  }
+  } // Navigator used for showing the meal details screen and this is how it used in widgets
 
   @override
   Widget build(BuildContext context) {
