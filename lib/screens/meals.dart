@@ -12,7 +12,10 @@ class MealsScreen extends StatelessWidget {
   void selectMeal(BuildContext context, Meal meal) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => MealDetailsScreen(meal: meal),
+        builder: (ctx) => MealDetailsScreen(
+          meal: meal,
+          onToggleFavorite: (Meal meal) {},
+        ),
       ),
     );
   } // Navigator used for showing the meal details screen and this is how it used in widgets
