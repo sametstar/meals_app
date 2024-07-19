@@ -13,15 +13,29 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   final List<Meal> _favoriteMeals = [];
 
+  void _showInfoMessage(String message) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+
   void _toggleMealFavoriteStatus(Meal meal) {
     final isExisting = _favoriteMeals.contains(meal);
     if (isExisting) {
       setState(() {
         _favoriteMeals.remove(meal);
+        _showInfoMessage("Meal is removed from Favorites");
       });
     } else {
       setState(() {
         _favoriteMeals.add(meal);
+        _showInfoMessage("Meal is added to Favorites");
       });
     }
   }
