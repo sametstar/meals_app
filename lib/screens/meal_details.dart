@@ -49,11 +49,15 @@ class MealDetailsScreen extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                child: Text(
-                  ingredient,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
-                      ),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    ingredient,
+                    textAlign: TextAlign.start,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                  ),
                 ),
               ),
             const SizedBox(
@@ -72,12 +76,15 @@ class MealDetailsScreen extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                child: Text(
-                  step,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
-                      ),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    step,
+                    textAlign: TextAlign.start,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                  ),
                 ),
               )
           ],
