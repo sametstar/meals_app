@@ -53,7 +53,7 @@ class _TabsScreenState extends State<TabsScreen> {
     if (identifier == "filters") {
     } else {
       Navigator.of(context).pop();
-    }
+    } // closes draawer manually
   }
 
   @override
