@@ -57,12 +57,21 @@ class MealDetailsScreen extends StatelessWidget {
             for (final ingredient in meal.ingredients)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Text(
-                  ingredient,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface,
+                child: Row(
+                  children: [
+                    const Icon(Icons.circle,
+                        size: 6, color: Colors.white), // White bullet point
+                    const SizedBox(width: 8), // Space between dot and text
+                    Expanded(
+                      child: Text(
+                        ingredient,
+                        textAlign: TextAlign.start,
+                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
                       ),
+                    ),
+                  ],
                 ),
               ),
             const SizedBox(
@@ -81,15 +90,35 @@ class MealDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            for (final step in meal.steps)
+            for (int i = 0; i < meal.steps.length; i++)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Text(
-                  step,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface,
+                child: Row(
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start, // Aligns number and text
+                  children: [
+                    // Step number with fixed width for alignment
+                    Container(
+                      width: 30, // Fixed width for number alignment
+                      child: Text(
+                        "${i + 1}.", // Numbering steps
+                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                              color: Theme.of(context).colorScheme.onSurface,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
+                    ),
+                    const SizedBox(width: 8), // Space between number and text
+                    Expanded(
+                      child: Text(
+                        meal.steps[i],
+                        textAlign: TextAlign.start,
+                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             const SizedBox(
