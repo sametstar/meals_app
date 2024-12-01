@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
 
 class MealDetailsScreen extends StatelessWidget {
-  const MealDetailsScreen(
-      {super.key, required this.meal, required this.onToggleFavorite});
+  const MealDetailsScreen({
+    Key? key,
+    required this.meal,
+    required this.onToggleFavorite,
+  }) : super(key: key);
 
   final Meal meal;
   final void Function(Meal meal) onToggleFavorite;
@@ -25,7 +28,9 @@ class MealDetailsScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
               meal.imageUrl,
@@ -36,57 +41,60 @@ class MealDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 14,
             ),
-            Text(
-              "Ingredients",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                "Ingredients",
+                style: Theme.of(context).textTheme.headline6!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
             ),
             const SizedBox(
-              height: 14,
+              height: 8,
             ),
             for (final ingredient in meal.ingredients)
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    ingredient,
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-                  ),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Text(
+                  ingredient,
+                  textAlign: TextAlign.start,
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                 ),
               ),
             const SizedBox(
               height: 24,
             ),
-            Text(
-              "Instructions",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                "Instructions",
+                style: Theme.of(context).textTheme.headline6!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
             ),
             const SizedBox(
-              height: 14,
+              height: 8,
             ),
             for (final step in meal.steps)
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    step,
-                    textAlign: TextAlign.start,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-                  ),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Text(
+                  step,
+                  textAlign: TextAlign.start,
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                 ),
-              )
+              ),
+            const SizedBox(
+              height: 24,
+            ),
           ],
         ),
       ),
