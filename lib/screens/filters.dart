@@ -12,8 +12,8 @@ class FiltersScreen extends StatefulWidget {
 class _FiltersScreenState extends State<FiltersScreen> {
   var _glutenFreeFilterSet = false;
   var _lactoseFreeFilterSet = false;
-  var _vegeterianFreeFilterSet = false;
-  var _veganFreeFilterSet = false;
+  var _vegeterianFilterSet = false;
+  var _veganFilterSet = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,10 +83,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
             contentPadding: const EdgeInsets.only(left: 34, right: 22),
           ),
           SwitchListTile(
-            value: _vegeterianFreeFilterSet,
+            value: _vegeterianFilterSet,
             onChanged: (isChecked) {
               setState(() {
-                _vegeterianFreeFilterSet = isChecked;
+                _vegeterianFilterSet = isChecked;
               });
             },
             title: Text(
@@ -107,10 +107,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
             contentPadding: const EdgeInsets.only(left: 34, right: 22),
           ),
           SwitchListTile(
-            value: _veganFreeFilterSet,
+            value: _veganFilterSet,
             onChanged: (isChecked) {
               setState(() {
-                _veganFreeFilterSet = isChecked;
+                _veganFilterSet = isChecked;
               });
             },
             title: Text(
