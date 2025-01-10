@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/tabs.dart';
-import 'package:meals_app/widgets/main_drawer.dart';
+// import 'package:meals_app/screens/tabs.dart';
+// import 'package:meals_app/widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({super.key});
@@ -17,14 +17,18 @@ class _FiltersScreenState extends State<FiltersScreen> {
       appBar: AppBar(
         title: const Text("Your Filters"),
       ),
-      drawer: MainDrawer(onselectScreen: (identifier) {
-        Navigator.of(context).pop;
-        if (identifier == "meals") {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (ctx) => const TabsScreen(),
-          ));
-        }
-      }),
+      // drawer: MainDrawer(
+      //   onselectScreen: (identifier) {
+      //     Navigator.of(context).pop;
+      //     if (identifier == "meals") {
+      //       Navigator.of(context).pushReplacement(
+      //         MaterialPageRoute(
+      //           builder: (ctx) => const TabsScreen(),
+      //         ),
+      //       );
+      //     }
+      //   },
+      // ),
       body: Column(
         children: [
           SwitchListTile(
