@@ -45,7 +45,7 @@ class MealDetailsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Ingredients",
-                style: Theme.of(context).textTheme.headline6!.copyWith(
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
@@ -66,7 +66,7 @@ class MealDetailsScreen extends StatelessWidget {
                       child: Text(
                         ingredient,
                         textAlign: TextAlign.start,
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: Theme.of(context).colorScheme.onSurface,
                             ),
                       ),
@@ -81,7 +81,7 @@ class MealDetailsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 "Instructions",
-                style: Theme.of(context).textTheme.headline6!.copyWith(
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
@@ -98,11 +98,11 @@ class MealDetailsScreen extends StatelessWidget {
                       CrossAxisAlignment.start, // Aligns number and text
                   children: [
                     // Step number with fixed width for alignment
-                    Container(
+                    SizedBox(
                       width: 30, // Fixed width for number alignment
                       child: Text(
                         "${i + 1}.", // Numbering steps
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: Theme.of(context).colorScheme.onSurface,
                               fontWeight: FontWeight.bold,
                             ),
@@ -113,7 +113,7 @@ class MealDetailsScreen extends StatelessWidget {
                       child: Text(
                         meal.steps[i],
                         textAlign: TextAlign.start,
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: Theme.of(context).colorScheme.onSurface,
                             ),
                       ),
