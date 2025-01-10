@@ -90,14 +90,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
               });
             },
             title: Text(
-              "Vegeterian-free",
+              "Vegeterian",
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
                   .copyWith(color: Theme.of(context).colorScheme.onBackground),
             ),
             subtitle: Text(
-              "Only includes Vegeterian-free meals",
+              "Only includes Vegeterian meals",
               style: Theme.of(context)
                   .textTheme
                   .labelMedium!
@@ -114,14 +114,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
               });
             },
             title: Text(
-              "Vegan-free",
+              "Vegan",
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
                   .copyWith(color: Theme.of(context).colorScheme.onBackground),
             ),
             subtitle: Text(
-              "Only includes Vegan-free meals",
+              "Only includes Vegan meals",
               style: Theme.of(context)
                   .textTheme
                   .labelMedium!
